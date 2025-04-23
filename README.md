@@ -2,7 +2,7 @@ Fnaf SB Redited is a WIP project that aims to reconstut Five Nights At Freddy's:
 
 Requirments:
 
-Unreal Engine: 4.27: In Edpic Games Launcher
+Unreal Engine: 4.27: In Epic Games Launcher
 
 Blender 3.6: https://www.blender.org/download/releases/3-6/
 
