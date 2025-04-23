@@ -4,7 +4,7 @@ Requirments:
 
 Unreal Engine: 4.27: In Epic Games Launcher
 
-FNAF SB UE Project: in Technical FNaF Discord or in github project.
+FNAF SB UE Project: in Technical FNaF Discord or [here](https://drive.google.com/file/d/1Rbuq7bDuqWt1FHJhbqcTbPY6m9Hm1PSO/view).
 
 Blender 3.6: https://www.blender.org/download/releases/3-6/
 
