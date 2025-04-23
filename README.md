@@ -8,4 +8,4 @@ Blender 3.6: https://www.blender.org/download/releases/3-6/
 
 Fmodel: https://github.com/4sval/FModel
 
-This prject Does Use AI Generated Scripts
+This project Does Use AI Generated Scripts
