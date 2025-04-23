@@ -1,0 +1,24 @@
+$uassetRoot = "H:\f\Fnaf_mod_tool\fnaf9\Content"
+$fbxFlatFolder = "H:\f\Fnaf_mod_tool\exports"
+
+# Load all FBX filenames into a dictionary
+$fbxFiles = @{}
+Get-ChildItem -Path $fbxFlatFolder -Filter "*.fbx" | ForEach-Object {
+    $fbxFiles[$_.BaseName.ToLower()] = $_.FullName
+}
+
+# Scan all .uasset files recursively
+Get-ChildItem -Path $uassetRoot -Recurse -Filter "*.uasset" | ForEach-Object {
+    $baseName = $_.BaseName.ToLower()
+    $uassetFolder = $_.DirectoryName
+
+    if ($fbxFiles.ContainsKey($baseName)) {
+        $fbxPath = $fbxFiles[$baseName]
+        $destPath = Join-Path -Path $uassetFolder -ChildPath "$($baseName).fbx"
+
+        Write-Host "📁 Copying $($baseName).fbx → $uassetFolder"
+        Copy-Item -Path $fbxPath -Destination $destPath -Force
+    } else {
+        Write-Host "❌ No matching FBX for $($baseName)"
+    }
+}

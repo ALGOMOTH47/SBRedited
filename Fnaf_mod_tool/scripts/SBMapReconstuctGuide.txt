@@ -1,0 +1,27 @@
+1️⃣ Map Reconstruction Script (SBMapReconstuct.py)
+✅ What It Does:
+Loads a JSON file exported from FModel.
+
+Places meshes and volumes into the open Unreal level.
+
+Automatically corrects scale (x100) and rotation axes.
+
+📌 How to Use:
+Open your Unreal Engine 4.27 project.
+
+Load the level you want to reconstruct.
+
+Open the Output Log.
+
+Run the script with:
+
+exec(open("PATH/TO/SBMapReconstuct.py").read())
+or in python console
+
+🛠 Configuration at the top of the script:
+
+GLOBAL_SCALE = unreal.Vector(100.0, 100.0, 100.0)
+
+json_path = "Path/To/Your/Map.json"
+
+content_dir = "Path/To/Your/Content/Folder"

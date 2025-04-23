@@ -1,0 +1,27 @@
+2️⃣ Material Generator Script (AutoMaterialGenerator.py)
+✅ What It Does:
+Scans /Game/Textures for matching _BaseColor, _Normal, _Rough, _Metallic textures.
+
+Automatically creates and saves materials in /Game/Materials.
+
+📌 How to Use:
+Import your textures into Unreal's /Game/Textures folder.
+
+Open the Output Log.
+
+Run:
+
+Edit
+exec(open("PATH/TO/AutoMaterialGenerator.py").read())
+or in python console
+
+✅ Workflow Summary
+Export map JSONs from FModel.
+
+Run MAP_MainLobby_LightsOff_Import.py to place meshes and volumes.
+
+Import texture assets into Unreal.
+
+Run AutoMaterialGenerator.py to generate materials.
+
+Optionally assign materials to static meshes manually or via batch.
