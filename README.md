@@ -1,4 +1,4 @@
-Fnaf SB Redited is a WIP project that aims to reconstut Five Nights At Freddy's:Security Breach Back into unreal editor.
+Fnaf SB Redited is a WIP project that aims to reconstut Five Nights At Freddy's:Security Breach Back into unreal editor For Modding.
 
 Requirments:
 
