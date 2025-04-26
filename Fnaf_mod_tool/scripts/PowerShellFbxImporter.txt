@@ -1,4 +1,4 @@
-$uassetRoot = "H:\f\Fnaf_mod_tool\fnaf9\Content - Copy"
+$uassetRoot = "H:\f\Fnaf_mod_tool\fnaf9\Content1"
 $fbxFlatFolder = "H:\f\Fnaf_mod_tool\Models"
 
 # Load all FBX filenames into a dictionary
