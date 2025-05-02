@@ -1,5 +1,3 @@
-#Thia Script Does not Currently Work
-
 import unreal
 import re
 

@@ -10,7 +10,7 @@ with open(json_path, 'r') as f:
     data = json.load(f)
 
 # === Global Configuration ===
-GLOBAL_SCALE = unreal.Vector(100.0, 100.0, 100.0)
+GLOBAL_SCALE = unreal.Vector(1.0, 1.0, 1.0)
 
 spawned_count = 0
 
