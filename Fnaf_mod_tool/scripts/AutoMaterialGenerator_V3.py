@@ -3,8 +3,8 @@ import os
 import json
 
 # SETTINGS
-JSON_FOLDER = "H:/f/Fnaf_mod_tool/fnaf9/Content/json/Mats"  # Full path to material JSON files
-SAVE_MATERIALS_TO = "/Game/Materials"  # Where to save generated materials
+JSON_FOLDER = "H:/f/Fnaf_mod_tool/json/Maps/mats"  # Full path to material JSON files
+SAVE_MATERIALS_TO = "/Game/Matireals"  # Where to save generated materials
 ROOT_DIR = "/Game"  # Root directory to search for textures
 
 # Helpers

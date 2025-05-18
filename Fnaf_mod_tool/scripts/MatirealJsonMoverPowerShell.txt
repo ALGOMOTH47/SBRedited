@@ -1,6 +1,6 @@
 # Set your source folder and target folder
-$SourceFolder = "H:\Your\Json\Files"
-$TargetFolder = "H:\Your\Target\Folder"
+$SourceFolder = "H:\f\Fnaf_mod_tool\json\Maps"
+$TargetFolder = "H:\f\Fnaf_mod_tool\json\mats"
 
 # Create the target folder if it doesn't exist
 if (!(Test-Path -Path $TargetFolder)) {
@@ -11,9 +11,9 @@ if (!(Test-Path -Path $TargetFolder)) {
 $JsonFiles = Get-ChildItem -Path $SourceFolder -Filter *.json -Recurse
 
 foreach ($JsonFile in $JsonFiles) {
-    $JsonText = Get-Content $JsonFile.FullName -Raw
+   $JsonText = Get-Content $JsonFile.FullName -Raw
 
-    if ($JsonText -match '"Textures"') {
+    if ($JsonText -match '"Materials"') {
         # Move the JSON file if it contains the string "Textures"
         $Destination = Join-Path $TargetFolder $JsonFile.Name
         Move-Item -Path $JsonFile.FullName -Destination $Destination -Force
