@@ -1,3 +1,6 @@
+![pizzaplex](https://github.com/user-attachments/assets/6ee68292-5f1e-4927-9a76-7deb4b987f10)
+
+
 Fnaf SB Redited is a WIP project that aims to reconstut Five Nights At Freddy's:Security Breach Back into unreal editor For Modding.
 
 Requirments:
@@ -17,6 +20,7 @@ Its recomened to export the Texture Files as .TGA file Format
 
 2. Blender
 Its Recomend to use Blender 3.6 some of of the script don't work on later versions
+
 
 3. Guides
 There are some guide TXT files in the main repository
