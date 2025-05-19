@@ -1,0 +1,25 @@
+How to use SBMapReconstuctv3.py
+
+Step 1. Open unreal engine 4.27
+Step 2. Open plugins and install python scripting api
+Step 3. Run SBMapReconstuctv3.py
+Step 4. Chose exported .Json file
+Step 5. Wait
+
+How to use AutoMaterialGenerator_V5.py
+Step 1. Open unreal engine 4.27
+Step 2. Open plugins and install python scripting api
+Step 3. Make sure all textures are imported 
+Step 4 run AutoMaterialGenerator_V5.py
+Step 5. Chose file location of material folder 
+Step 6. Wait (this may take a few hours)
+Step 7. Fix broken materials
+
+How to use AutoMatiral3dModelConverterV2.py
+Step 1. Open unreal engine 4.27
+Step 2. Open plugins and install python scripting api
+Step 3. Run AutoMatiral3dModelConverterV2.py
+Step 4. Chose folder location of static mesh jsons
+Step 5. Wait
+
+
