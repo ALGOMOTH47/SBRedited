@@ -23,7 +23,7 @@ Its Recomend to use Blender 3.6 some of of the script don't work on later versio
 
 
 3. Guides
-There are some guide TXT files in the main repository
+There are a guide in scripts under the file name How To Use
 
 
 This project Does Use AI Generated Scripts
