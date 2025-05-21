@@ -7,9 +7,26 @@ import json
 CONFIG_FILE = "config.json"
 
 SCRIPTS = {
-    "Generate Materials": "Scripts/AutoMaterialGenerator_V5.py",
+    "Generate Materials WIP": "Scripts/AutoMaterialGenerator_V5.py",
     "Apply Materials": "Scripts/AutoMatiral3dModelConverterV2.py",
-    "Reconstruct Map": "Scripts/SBMapReconstuctV5.py",}
+    "Reconstruct Map": "Scripts/SBMapReconstuctV4.py",}
+
+# Define instructions for each script
+SCRIPT_INSTRUCTIONS = {
+    "Apply Materials": (
+        "This script applys all made materials to the cosoponding models"
+    ),
+    "Generate Materials WIP": (
+        "This script automatically generates materials from your imported textures.\n"
+        "It looks for naming conventions like _BaseColor, _Normal, and _ORM."
+        "Chose .json materials foldor to start"
+    ),
+    "Reconstruct Map": (
+        "This script rebuilds the map using .json files exported from FModel.                 "
+        "Make sure all .uasset files are imported before use."
+        "Chose .json map file to start"
+    )
+}
 
 class UE4PythonGUI:
     def __init__(self, root):
@@ -22,29 +39,35 @@ class UE4PythonGUI:
         self.load_config()
 
         # UE4 Cmd path
-        tk.Label(root, text="Select UnrealEditor-Cmd.exe:").pack()
+        tk.Label(root, text="Select UE4Editor-Cmd.exe:").pack()
         tk.Entry(root, textvariable=self.uecmd_path, width=60).pack(pady=5)
-        tk.Button(root, text="Browse UE4 Cmd", command=self.browse_uecmd).pack()
+        tk.Button(root, text="Browse UE4Editor-Cmd", command=self.browse_uecmd).pack()
 
         # Project file path
         tk.Label(root, text="Select .uproject file:").pack()
         tk.Entry(root, textvariable=self.project_path, width=60).pack(pady=5)
         tk.Button(root, text="Browse Project", command=self.browse_project).pack()
 
-        # Script checkboxes
+        # Script checkboxes and instruction buttons
         tk.Label(root, text="Select scripts to run:").pack(pady=(10, 0))
         self.script_vars = {}
         for name in SCRIPTS:
+            frame = tk.Frame(root)
+            frame.pack(anchor="w", padx=10, pady=(2, 0))
+
             var = tk.BooleanVar()
             self.script_vars[name] = var
-            tk.Checkbutton(root, text=name, variable=var).pack(anchor="w")
 
+            tk.Checkbutton(frame, text=name, variable=var).pack(side="left")
+            tk.Button(frame, text="Instructions", command=lambda n=name: self.show_instructions(n)).pack(side="left", padx=5)
+
+        # Run button
         tk.Button(root, text="Run Selected Scripts", command=self.run_scripts).pack(pady=10)
 
-        # Console output box
-        tk.Label(root, text="Output:").pack()
-        self.console = scrolledtext.ScrolledText(root, width=80, height=15)
-        self.console.pack(padx=10, pady=(0, 10))
+        # Console output
+        #tk.Label(root, text="Output:").pack()
+        #self.console = scrolledtext.ScrolledText(root, width=80, height=15)
+        #self.console.pack(padx=10, pady=(0, 10))
 
     def browse_project(self):
         file = filedialog.askopenfilename(filetypes=[("Unreal Project", "*.uproject")])
@@ -53,19 +76,19 @@ class UE4PythonGUI:
             self.save_config()
 
     def browse_uecmd(self):
-        file = filedialog.askopenfilename(filetypes=[("ue4", "UnrealEditor-Cmd.exe")])
+        file = filedialog.askopenfilename(filetypes=[("UE4", ".exe")])
         if file:
             self.uecmd_path.set(file)
             self.save_config()
 
     def run_scripts(self):
-        self.console.delete(1.0, tk.END)  # Clear console
+        self.console.delete(1.0, tk.END)
 
         project = self.project_path.get()
         uecmd = self.uecmd_path.get()
 
         if not uecmd or not os.path.exists(uecmd):
-            messagebox.showerror("Error", "Please select a valid UnrealEditor-Cmd.exe path.")
+            messagebox.showerror("Error", "Please select a valid UE4Editor-Cmd.exe path.")
             return
         if not project or not os.path.exists(project):
             messagebox.showerror("Error", "Please select a valid .uproject file.")
@@ -101,6 +124,10 @@ class UE4PythonGUI:
 
             self.console.insert(tk.END, "-"*80 + "\n")
             self.console.see(tk.END)
+
+    def show_instructions(self, script_name):
+        instructions = SCRIPT_INSTRUCTIONS.get(script_name, "No instructions available.")
+        messagebox.showinfo(f"{script_name} Instructions", instructions)
 
     def save_config(self):
         data = {
