@@ -9,7 +9,7 @@ CONFIG_FILE = "config.json"
 SCRIPTS = {
     "Generate Materials": "Scripts/AutoMaterialGenerator_V5.py",
     "Apply Materials": "Scripts/AutoMatiral3dModelConverterV2.py",
-    "Reconstruct Map": "Scripts/SBMapReconstuctV4.py",}
+    "Reconstruct Map": "Scripts/SBMapReconstuctV5.py",}
 
 class UE4PythonGUI:
     def __init__(self, root):
