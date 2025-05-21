@@ -64,10 +64,10 @@ class UE4PythonGUI:
         # Run button
         tk.Button(root, text="Run Selected Scripts", command=self.run_scripts).pack(pady=10)
 
-        # Console output
-        #tk.Label(root, text="Output:").pack()
-        #self.console = scrolledtext.ScrolledText(root, width=80, height=15)
-        #self.console.pack(padx=10, pady=(0, 10))
+       #Console output
+        tk.Label(root, text="Output:").pack()
+        self.console = scrolledtext.ScrolledText(root, width=80, height=15)
+        self.console.pack(padx=10, pady=(0, 10))
 
     def browse_project(self):
         file = filedialog.askopenfilename(filetypes=[("Unreal Project", "*.uproject")])
