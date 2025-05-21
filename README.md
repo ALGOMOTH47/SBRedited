@@ -1,5 +1,8 @@
 ![pizzaplex](https://github.com/user-attachments/assets/6ee68292-5f1e-4927-9a76-7deb4b987f10)
 
+heres a ![showcase](https://youtu.be/rxtdg2mulFU) of how it works
+
+
 
 Fnaf SB Redited is a WIP project that aims to reconstut Five Nights At Freddy's:Security Breach Back into unreal editor For Modding.
 
